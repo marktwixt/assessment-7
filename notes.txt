@@ -1,0 +1,71 @@
+For tinyArray:
+
+doublerAppend: "0.0042 ms"
+doublerInsert: "0.0055 ms"
+
+For smallArray:
+
+doublerAppend: "0.0494 ms"
+`doublerInsert": "0.1506 ms"
+
+For mediumArray:
+
+doublerAppend: "0.4896 ms"
+`doublerInsert": "14.0652 ms"
+
+For largeArray:
+
+doublerAppend: "4.8937 ms"
+`doublerInsert": "1,452.2927 ms"
+
+For extraLargeArray:
+
+doublerAppend: "46.1391 ms"
+`doublerInsert": "not completed after 10 seconds"
+
+ESSAY RESPONSE:
+The doublerInsert function takes increasingly longer to run 
+as the size of the array increases, and eventually fails to complete 
+within 10 seconds for the largest array. 
+This is because unshift() is a relatively expensive operation 
+compared to push(), and the time complexity of doublerInsert is 
+therefore O(n^2) as it involves shifting all existing elements 
+in the array to the right for each new element added. On the other hand, 
+doublerAppend has a time complexity of O(n) as it only involves 
+adding new elements to the end of the array.
+
+EXTRA CREDIT 1:
+The slower function, doublerInsert, is slow because it uses the 
+unshift() method to insert new elements at the beginning of the array, 
+which has a time complexity of O(n), where n is the length of the array. 
+This means that for each new element added, all existing elements in the 
+array are shifted one position to the right. As the array grows, 
+this operation becomes increasingly expensive and time-consuming.
+
+On the other hand, the faster function, doublerAppend, uses the push() method 
+to add new elements to the end of the array, which has a time complexity of O(1). 
+This means that adding new elements to the end of the array is a constant-time 
+operation, regardless of the size of the array.
+
+In general regarding arrays, it's likely faster to add new 
+elements to the end of the array rather than at the beginning, because adding 
+elements at the beginning requires shifting all existing elements to the right. 
+Therefore, if performance is a concern, it is often better to structure 
+code to add new elements to the end of the array whenever possible.
+
+EXTRA CREDIT 2:
+sumZero: This function has a space complexity of O(1). 
+The amount of space used by the function does not depend on the size of the input array.
+
+uniqueCharacters: This function has a space complexity of O(n), 
+where n is the length of the input string. The function creates a Set data structure 
+to store the unique characters, which will take up space proportional to the length of the string.
+
+isPangram: This function has a space complexity of O(1). 
+The function creates a Set data structure to store the alphabet, 
+but the size of the Set is fixed and does not depend on the size of the input sentence.
+
+findLongestWord: This function has a space complexity of O(1). 
+The amount of space used by the function does not depend on the size of the input array. 
+The function only stores a few variables (i.e., maxLength, i, wordLength, etc.) 
+which do not increase with the size of the input array.
